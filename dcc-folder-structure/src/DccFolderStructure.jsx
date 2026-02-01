@@ -276,7 +276,7 @@ function SubItem({ name, mob }) {
       <div style={{ display:"flex", alignItems:"center", gap: mob?5:7, padding: mob?"3px 0":"4px 0" }}>
         <span style={{ color:"#94a3b8", fontSize: mob?12:14 }}>├─</span>
         <span style={{ fontSize: mob?14:16 }}>{hasChild ? "📁" : locked ? "🔒" : "📄"}</span>
-        <span style={{ fontSize: mob?12:14, color: locked?"#ef4444":"#cbd5e1", fontFamily:"'Consolas','Courier New',monospace", fontWeight: locked?600:400, wordBreak:"break-all" }}>{parent}</span>
+        <span style={{ fontSize: mob?12:14, color: locked?"#ef4444":"#0d141d", fontFamily:"'Consolas','Courier New',monospace", fontWeight: locked?600:400, wordBreak:"break-all" }}>{parent}</span>
       </div>
       {children.map((c, i) => (
         <div key={i} style={{ marginLeft: mob?24:30, display:"flex", alignItems:"center", gap: mob?5:7, padding: mob?"2px 0":"2.5px 0" }}>
