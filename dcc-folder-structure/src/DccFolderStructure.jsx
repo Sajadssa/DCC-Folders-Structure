@@ -276,7 +276,7 @@ function SubItem({ name, mob }) {
       <div style={{ display:"flex", alignItems:"center", gap: mob?5:7, padding: mob?"3px 0":"4px 0" }}>
         <span style={{ color:"#94a3b8", fontSize: mob?12:14 }}>├─</span>
         <span style={{ fontSize: mob?14:16 }}>{hasChild ? "📁" : locked ? "🔒" : "📄"}</span>
-        <span style={{ fontSize: mob?12:14, color: locked?"#ef4444":"#78b7d0d2", fontFamily:"'Consolas','Courier New',monospace", fontWeight: locked?600:400, wordBreak:"break-all" }}>{parent}</span>
+        <span style={{ fontSize: mob?12:14, color: locked?"#ef4444":"#30657ad2", fontFamily:"'Consolas','Courier New',monospace", fontWeight: locked?600:400, wordBreak:"break-all" }}>{parent}</span>
       </div>
       {children.map((c, i) => (
         <div key={i} style={{ marginLeft: mob?24:30, display:"flex", alignItems:"center", gap: mob?5:7, padding: mob?"2px 0":"2.5px 0" }}>
@@ -292,7 +292,7 @@ function SubItem({ name, mob }) {
 function FolderCard({ folder, color, mob }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ background:"#ffffff08", borderRadius: mob?8:10, border:`1px solid ${color}25`, overflow:"hidden", marginBottom: mob?6:8 }}>
+    <div style={{ background:"#fff", borderRadius: mob?8:10, border:`1px solid ${color}25`, overflow:"hidden", marginBottom: mob?6:8 }}>
       <div onClick={() => setOpen(!open)} style={{
         display:"flex", alignItems:"center", gap: mob?7:10, padding: mob?"10px 14px":"12px 18px",
         cursor:"pointer", background:`${color}08`, borderBottom:`1px solid ${color}15`, userSelect:"none"
@@ -300,7 +300,7 @@ function FolderCard({ folder, color, mob }) {
         <span style={{ fontSize: mob?11:14, color, transition:"transform .15s", transform: open?"rotate(90deg)":"rotate(0)" }}>▶</span>
         <span style={{ fontSize: mob?17:20 }}>{folder.icon}</span>
         <span style={{ fontSize: mob?13:16, fontWeight:600, color, fontFamily:"'Consolas','Courier New',monospace" }}>{folder.name}</span>
-        <span style={{ marginLeft:"auto", fontSize: mob?11:13, color:"#94a3b8", background:"#05203c37", borderRadius:10, padding: mob?"2px 7px":"2px 8px", fontWeight:600 }}>{folder.sub.length}</span>
+        <span style={{ marginLeft:"auto", fontSize: mob?11:13, color:"#94a3b8", background:"#f1f5f9", borderRadius:10, padding: mob?"2px 7px":"2px 8px", fontWeight:600 }}>{folder.sub.length}</span>
       </div>
       {open && <div style={{ padding: mob?"7px 0 8px":"9px 0 10px" }}>{folder.sub.map((s,i)=><SubItem key={i} name={s} mob={mob}/>)}</div>}
     </div>
